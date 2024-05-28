@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+  
+  	<!-- log into console -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss} [%t] %-5level %logger{36} => %msg%n"/>
+    </Console>
+    
+    <!-- log into a file -->
+    <!-- logs folder and file myapp.log will auto be created once we run application in this location we defined -->
+    <File name="File" fileName="src/logs/myapp.log">
+      <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss} [%t] %-5level %logger{36} => %msg%n"/>
+    </File>
+    
+  </Appenders>
+  <Loggers>
+    <Root level="trace">
+      <AppenderRef ref="Console"/> <!-- log into console -->
+      <AppenderRef ref="File"/> <!-- log into a file -->
+    </Root>
+  </Loggers>
+</Configuration>
